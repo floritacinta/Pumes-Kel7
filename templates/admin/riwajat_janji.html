@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pumes</title>
+   <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='img/1.ico') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style-user.css') }}">
+      <style>
+         .form-container {
+            background-color: #d9d9d9;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 100%;
+            padding: 20px;
+            text-align: left;
+             border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+        
+        .form-header {
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            background-color: #ff898b;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .form-container h2 {
+            margin-bottom: 20px;
+            color: black;
+        }
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 0 auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .form-group textarea {
+            resize: none;
+            height: 100px;
+        }
+        .form-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #424242;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+        .form-button:hover {
+            background-color: #ff898b;
+        }
+
+
+    </style>
+</head>
+<body style="background-color: white;">
+
+  <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo">
+                <a href="#"><img src="{{ url_for('static', filename='img/1.ico') }}" alt="Logo"></a>
+            </div>
+             <h2><span>PUMES</span></h2>
+            <div class="nav-links">
+                 <a href="{{ url_for('admin_dashboard') }}">Home</a>
+                <a href="{{ url_for('kalender') }}">Siklus Haid</a>
+                <a href="{{ url_for('artikel') }}">Artikel</a>
+                <a href="{{ url_for('chatbot') }}">Chatbot</a>
+                <a href="{{ url_for('konsultasi') }}">konsultasi</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle">
+                &#9776;
+                <ul class="menu-toggle-conter">
+                    <li><a href="{{ url_for('kalender') }}">Siklus Haid</a></li>
+                    <li><a href="{{ url_for('artikel') }}">Artikel</a></li>
+                    <li><a href="{{ url_for('chatbot') }}">Chatbot</a></li>
+                    <li><a href="{{ url_for('konsultasi') }}">konsultasi</a></li>
+                </ul>
+            </div>
+             <div class="menu-home" id="menu-home">
+                 <a href="{{ url_for('admin_dashboard') }}"><i class="fa fa-home" style="font-size: 30px; color: white;padding: 0 20px"></i></a>
+             </div>
+            
+            
+            <div class="nav-button">
+                <button id="menu-toggle-btn">Hi, {{ session['role'] }}</button>
+    
+    <div id="menuu" class="hiddenn">
+        <ul>
+            <li><a href="{{ url_for('riwajat_janji') }}">Janji<Br>Dokter</a></li>
+            <li><a href="{{ url_for('show_users') }}">List<Br>Daftar</a></li>
+            <li><a href="{{ url_for('admin_settings') }}">Setting</a></li>
+            <li><a href="{{ url_for('logout') }}">Logout</a></li>
+        </ul>
+    </div>
+            </div>
+
+        </div>
+    </nav>
+
+
+
+
+  
+    <div style="padding: 5% 300px;">
+        <div class="form-header" style="border-radius: 10px;">
+            <h2>Janji Dengan Dokter</h2>
+        </div>
+        <div class="form-container">
+       <p>Yth. {{ input_nama }}</p>
+       <p>riwayat janji konsultasi dengan {{ input_dokter }}</p>
+       <br>
+       <p><b>Deskripsi</b></p>
+       <p>{{ input_janji }}</p><br>
+       <p><b>Tanggal</b></p>
+       <p>{{ input_tanggal }}</p><br>
+       <a style="text-decoration: none;background-color: #ff898b;color: white;padding: 5px;border: none;padding: 10px 20px;font-size: 16px;cursor: pointer;border-radius: 20px;" href="{{ url_for('hapus_session') }}">Hapus Janji</a>
+       <br> <br>
+    </div>
+    </div>
+
+
+
+
+
+
+
+<div class="footer"></div>
+
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>
