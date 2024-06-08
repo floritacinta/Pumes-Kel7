@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pumes</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='img/1.ico') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style-user.css') }}">
+      <style>
+        .profile-container {
+            display: flex;
+            flex-wrap: wrap;
+           justify-content: center;
+        }
+        .profile {
+            border-radius: 10px;
+            padding: 20px;
+            width: 250px;
+            text-align: left;
+            margin-bottom: -10%;
+        }
+        .profile img {
+            width: 100%;
+            border-radius: 10%;
+        }
+        .profile h2 {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+        .profile p {
+            font-size: 14px;
+            color: #666;
+            max-height: 60px;
+    overflow: hidden;
+        }
+
+
+        @media (max-width: 1024px) {
+    .profile {
+   width: 50%;
+   margin-bottom: -20%;
+    }
+}
+        #menuu  {
+            background-color: #93cfd9;
+        }
+        .menu-toggle-conter {
+             background-color: #93cfd9;
+        }
+    </style>
+</head>
+<body style="background-color: white;">
+
+  <nav class="navbar" style="background-color: #93cfd9">
+             <div class="navbar-container">
+            <div class="logo">
+                <a href="#"><img src="{{ url_for('static', filename='img/1.ico') }}" alt="Logo"></a>
+            </div>
+             <h2><span>PUMES</span></h2>
+            <div class="nav-links">
+                 <a href="{{ url_for('admin_dashboard') }}">Home</a>
+                <a href="{{ url_for('kalender') }}">Siklus Haid</a>
+                <a href="{{ url_for('artikel') }}">Artikel</a>
+                <a href="{{ url_for('chatbot') }}">Chatbot</a>
+                <a href="{{ url_for('konsultasi') }}">konsultasi</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle">
+                &#9776;
+                <ul class="menu-toggle-conter">
+                    <li><a href="{{ url_for('kalender') }}">Siklus Haid</a></li>
+                    <li><a href="{{ url_for('artikel') }}">Artikel</a></li>
+                    <li><a href="{{ url_for('chatbot') }}">Chatbot</a></li>
+                    <li><a href="{{ url_for('konsultasi') }}">konsultasi</a></li>
+                </ul>
+            </div>
+             <div class="menu-home" id="menu-home">
+                 <a href="{{ url_for('admin_dashboard') }}"><i class="fa fa-home" style="font-size: 30px; color: white;padding: 0 20px"></i></a>
+             </div>
+            
+            
+            <div class="nav-button">
+                <button id="menu-toggle-btn">Hi, {{ session['role'] }}</button>
+    
+    <div id="menuu" class="hiddenn">
+        <ul>
+            <li><a href="{{ url_for('riwajat_janji') }}">Janji<Br>Dokter</a></li>
+            <li><a href="{{ url_for('show_users') }}">List<Br>Daftar</a></li>
+            <li><a href="{{ url_for('admin_settings') }}">Setting</a></li>
+            <li><a href="{{ url_for('logout') }}">Logout</a></li>
+        </ul>
+    </div>
+            </div>
+
+        </div>
+    </nav>
+
+ 
+
+<div style="text-align: center; padding: 5% 110px;">
+        
+    <div class="profile-container" style="box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); padding: 30px 0; border-radius: 30px;">
+        <div class="profile">
+            <div style="height: 60%;overflow: hidden;background-color: #93cfd9; border-radius: 10%;">
+                <img src="{{ url_for('static', filename=dokter.gambarr) }}" alt="Foto John Doe">
+            </div>
+
+            <div style="display: flex;">
+                 <div class="profile-rating" style="display: grid;">
+                <span>★★★★★</span> (4.5/5)
+            </div>
+            <p>rating ulasan lain belum</p>
+            </div>
+        </div>
+
+
+       <div class="profile" style="padding: 0; width: 60%">
+<h2>{{ dokter.nama }}</h2>
+
+       <div style="display: flex">
+        <div>
+            
+            <p style="font-size: 12px;">Spesialisasi {{ dokter.spesialisasi }}</p><br>
+            <p>Latar Belakang Pendidikan:<br>{{ dokter.latar }}</p>
+        </div>
+        <div style="margin: 30px 45px; text-align: center;">
+            <p>Buat Janji?</p>
+            <a href="{{ url_for('janji', id=dokter.id) }}" class="btn" style="background-color: #93cfd9" >here</a>  
+
+
+        </div>
+       </div>     
+        
+<br>
+ <p>Keahlian:<br>{{ dokter.keahlian }}</p>
+        </div>
+    </div>
+</div>
+
+
+<div class="footer" style="background-color: #93cfd9"></div>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>
