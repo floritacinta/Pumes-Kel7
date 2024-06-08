@@ -1,0 +1,304 @@
+html {
+    background-color: black;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar {
+    background-color: #ff898b;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.logo img {
+    height: 60px;
+}
+
+.navbar-container h2 {
+  position: absolute;
+padding-left: 74px;
+
+}
+
+.navbar-container span {
+    color: #fff;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 16px;
+}
+
+.nav-links a:hover {
+    color: #ddd;
+}
+
+
+
+
+
+
+.brand {
+    font-size: 24px;
+    color: #fff;
+    margin-left: 20px;
+}
+
+
+
+
+.PUMES {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.PUMES + .navbar-container {
+  padding-top: 60px;
+}
+
+
+
+.btn {
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: bold;
+            color: black;
+            background-color: #a497e8;
+            border-radius: 8px;
+            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+
+
+.centered-container {
+    padding: 50px 150px;
+    color: white;
+    background-color: #c0c4c3;
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.image-container {
+    
+}
+
+.image-container img {
+    width: 500px;
+    height: auto;
+}
+
+.text-container div {
+   text-align: center; 
+   padding-bottom: 16px;
+}
+
+.text-container h1 {
+    font-size: 4em;
+    margin-bottom: 10px;
+    color: #5d1c0d;
+    font-weight: bold;
+}
+
+.text-container p {
+    font-size: 1.2em;
+    border: 2px solid #5b190b;
+    background: #ff898b;
+    padding: 20px;
+    border-radius: 20px;
+}
+.text-container a {
+    
+}
+
+
+
+
+.footer {
+  background-color: #ff898b;
+  padding: 23px;
+  position: relative;
+}
+
+
+
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: white;
+        }
+
+        .menu-toggle:hover .menu-toggle-conter {
+            display: block;
+        }
+
+        .menu-toggle-conter {
+            padding-top: 31px;
+            display: none;
+            position: absolute;
+            top: 53px;
+            right: 200px;
+            background-color: #ff898b;
+        }
+
+        .menu-toggle-conter li {
+            list-style: none;
+            padding: 0;
+
+        }
+
+        .menu-toggle-conter li a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: white;
+            font-size: 15px;
+        }
+
+        .menu-toggle-conter li a:hover {
+            color: #ddd;
+        }
+
+        .hiddenn {
+            display: none;
+        }
+        #menuu {
+            position: absolute;
+            margin-top: 22px;
+            background-color: #ff898b;
+            width: 8%; /* Tentukan lebar untuk memastikan area hover */
+            text-align: center;
+        }
+
+        #menuu li {
+            list-style: none;
+            padding: 0; /* Hapus padding dari li agar tidak mengganggu */
+        }
+
+        #menuu li a {
+            display: block; /* Buat elemen a menjadi block */
+            padding: 10px; /* Atur padding untuk elemen a */
+            text-decoration: none;
+            color: white;
+            font-size: 15px;
+        }
+
+        #menuu li a:hover {
+            color: #ddd;;
+        }
+
+
+        .nav-button {
+            padding-right: 20px;
+        }
+
+        .nav-button button {
+            background-color: #ffffffd6;
+            color: #5d1c0d;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 20px;
+        }
+
+        .nav-button button:hover {
+            background-color: #ddd;
+        }
+
+
+
+
+
+.menu-home {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+}
+
+@media (max-width: 1024px) {
+
+    #menuu {
+        width: 12%;
+        }
+    .menu-toggle {
+        display: block;
+        color: white;
+    }
+
+    .menu-home {
+        display: block;
+    }
+    .text-container {
+    padding: 0px 0px;
+    padding-bottom: 40px;
+}
+
+    .nav-links{
+    visibility: hidden;
+}
+    .centered-container {
+        padding: 25px 0px;
+        display: block;
+    }
+    
+    .image-container {
+                text-align: center;
+                padding: 0;
+    }
+
+
+    .text-container h1 {
+    font-size: 28px;
+    }
+
+    .text-container p {
+        font-size: 16px;
+    }
+
+    .profile-container {
+        height: 850px;
+    }
+
+}
+
+/*@media (max-width: 520px) {
+    .text-container {
+    padding: 0px 0px;
+    padding-bottom: 40px;
+}*/
