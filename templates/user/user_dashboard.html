@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pumes</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='img/1.ico') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style-user.css') }}">
+</head>
+<body>
+<nav class="navbar">
+    <div class="navbar-container">
+        <div class="logo">
+            <a href="#"><img src="{{ url_for('static', filename='img/1.ico') }}" alt="Logo"></a>
+        </div>
+        <h2><span>PUMES</span></h2>
+        <div class="nav-links">
+            <a href="{{ url_for('user_dashboard') }}">Home</a>
+            <a href="{{ url_for('kalenderu') }}">Siklus Haid</a>
+            <a href="{{ url_for('artikelu') }}">Artikel</a>
+            <a href="">Chatbot</a>
+            <a href="{{ url_for('konsultasiu') }}">Konsultasi</a>
+        </div>
+        <div class="menu-toggle" id="menu-toggle">&#9776;
+            <ul class="menu-toggle-conter">
+                <li><a href="{{ url_for('kalenderu') }}">Siklus<br>Haid</a></li>
+                <li><a href="{{ url_for('artikelu') }}">Artikel</a></li>
+                <li><a href="">Chatbot</a></li>
+                <li><a href="{{ url_for('konsultasiu') }}">Konsultasi</a></li>
+            </ul>
+        </div>
+        <div class="menu-home" id="menu-home">
+            <a href="{{ url_for('user_dashboard') }}"><i class="fa fa-home" style="font-size: 30px; color: white;padding: 0 20px"></i></a>
+        </div>
+        <div class="nav-button">
+            <button id="menu-toggle-btn">Hi, {{ session['role'] }}</button>
+            <div id="menuu" class="hiddenn">
+                <ul>
+                    <li><a href="{{ url_for('riwajat_janjiu') }}">Janji<br>Dokter</a></li>
+                    <li><a href="{{ url_for('show_usersu') }}">List<br>Daftar</a></li>
+                    <li><a href="{{ url_for('user_settings') }}">Setting</a></li>
+                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="centered-container" style=" padding: 5px 150px;">
+        <div class="image-container" style="">
+            <img src="{{ url_for('static', filename='img/2.png') }}" alt="Image">
+        </div>
+        <div class="text-container">
+            <h1>PUMES ?</h1>
+            <p>Pumes adalah website terpercaya yang menjadi solusi permasalahan kesehatan reproduksi perempuan. Sajian informasi akurat mengenai organ reproduksi, kehamilan, menstruasi, hingga penyakit lain, disertai konsultasi dengan ahli membantu perempuan merawat kesehatan dengan lebih baik.</p>
+        </div>
+    </div>
+<div class="footer"></div>
+
+
+
+
+
+<div class="centered-container" style="background-color: #b3b6ce">
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='img/3.jpg') }}" alt="Image" style="border-radius: 30px;">
+        </div>
+        <div class="text-container" style="padding: 0 60px;">
+            <h1 style="text-align: center;
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: black;">Siklus Terkendali, Hidup Lebih Terencana. Pantau Menstruasimu!</h1>
+            <p style="text-align: center;
+    font-size: 1.2em;
+     border: none;
+     background: none; 
+    padding: 20px;
+    border-radius: 20px;
+    color: black;">kamu bisa melihat, mencatat dan menyimpan kalender, pengingat dan suasana hatimu </p>
+
+    <div>
+    <a href="{{ url_for('kalenderu') }}" class="btn" >Try?</a>
+</div>
+        </div>
+    </div>
+    <div class="footer" style="background-color: #a497e8"></div>
+
+
+
+
+
+    <div class="centered-container" style="background-color: #dc7aa9;">
+        
+         <div class="text-container" style="padding: 0 60px;">
+            <h1 style="text-align: center;
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: black;">Raih <span style="color: white;">Pengetahuan</span> Tanpa Batas, Baca Buku dan Artikel Online!</h1>
+            <p style="text-align: center;
+    font-size: 1.2em;
+     border: none;
+     background: none; 
+    padding: 20px;
+    border-radius: 20px;
+    color: black;"> tinggal masukin judul, penulis atau kata kunci tertentu, kamu udah bisa baca atau download apa yang kamu cari</p>
+
+    <div>
+    <a href="{{ url_for('artikelu') }}" class="btn" style="background-color: #bb5759" >Try?</a>
+</div>
+        </div>
+        <div class="image-container" style="">
+            <img src="{{ url_for('static', filename='img/4.jpg') }}" alt="Image" style="border-radius: 30px;">
+        </div>
+    </div>
+<div class="footer" style="background-color: #bb5759"></div>
+
+
+
+
+<div class="centered-container" style="background-color: #301b6a">
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='img/5.jpg') }}" alt="Image" style="border-radius: 30px;">
+        </div>
+        <div class="text-container" style="padding: 0 60px;">
+            <h1 style="text-align: center;
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: white;"><span style="color: #a7f1bc;">Pumbot</span></h1>
+            <h1 style="text-align: center;
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: white;"> Teman Bicara Pintar, Solusi Cepat di Ujung Jari!</h1>
+            <p style="text-align: center;
+    font-size: 1.2em;
+     border: none;
+     background: none; 
+    padding: 20px;
+    border-radius: 20px;
+    color: white;"><span style="color: #a7f1bc;">Pumbot</span> bisa memahami, merespon, menanggapai dan memberikan jawaban dari pertanyaan dan permintaan yang kamu berikan. </p>
+
+    <div>
+    <a href="" class="btn" style="background-color: #a7f1bc;">Try?</a>
+</div>
+        </div>
+    </div>
+    <div class="footer" style="background-color: #a497e8"></div>
+
+
+
+
+
+
+
+ <div class="centered-container" style="background-color: white;">
+        
+         <div class="text-container" style="padding: 0 60px;">
+            <h1 style="text-align: center;
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: black;">Hubungi <span style="color: #93cfd9;">Dokter</span> Mudah, Sehat Jadi Lebih Dekat!</h1>
+            <p style="text-align: center;
+    font-size: 1.2em;
+     border: none;
+     background: none; 
+    padding: 20px;
+    border-radius: 20px;
+    color: black;"> tinggal masukin judul, penulis atau kata kunci tertentu, kamu udah bisa baca atau download apa yang kamu cari</p>
+
+    <div>
+    <a href="{{ url_for('konsultasiu') }}" class="btn" style="background-color: #93cfd9" >Try?</a>
+</div>
+        </div>
+        <div class="image-container" style="">
+            <img src="{{ url_for('static', filename='img/6.jpg') }}" alt="Image" style="border-radius: 30px;">
+        </div>
+    </div>
+<div class="footer" style="background-color: #93cfd9"></div>
+
+
+<div class="footer">
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo">
+                <a href="#"><img src="{{ url_for('static', filename='img/1.png') }}" alt="Logo"></a>
+            </div>
+             <h2><span>PUMES</span></h2>
+            <div style="display: grid; text-align: center; color: white; align-items: center;
+    flex-grow: 1;
+    justify-content: center;">
+                <h1 style="padding-bottom: 15px">PUMES</h1>
+                <span>Sahabat Setia Perempuan</span>
+            </div>
+            <div style="display:;">
+                <i class="fa fa-whatsapp" style="font-size: 30px; color: white; padding: 0 3px"></i>
+                <i class="fa fa-instagram" style="font-size: 30px; color: white; padding: 0 3px"></i>
+                <i class="fa fa-envelope" style="font-size: 30px; color: white;padding: 0 3px"></i>
+            </div>
+           
+
+        </div>
+    </nav>
+</div>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+
+</body>
+</html>
+
+
