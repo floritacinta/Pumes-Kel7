@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Pumes</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='img/1.ico') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style-user.css') }}">
+    <style type="text/css">
+        .form-container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 100%;
+            padding: 20px;
+            text-align: left;
+        }
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: black;
+        }
+        .form-group {
+            
+            text-align: left;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 0 auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .form-group textarea {
+            resize: none;
+            height: 100px;
+        }
+        .form-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #424242;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+        .form-button:hover {
+            background-color: #218838;
+        }
+        #menuu  {
+            background-color: #a497e8;
+        }
+        .menu-toggle-conter {
+             background-color: #a497e8;
+        }
+    </style>
+</head>
+<body style="background-color: white;">
+<nav class="navbar" style="background-color: #a497e8;">
+    <div class="navbar-container">
+        <div class="logo">
+            <a href="#"><img src="{{ url_for('static', filename='img/1.ico') }}" alt="Logo"></a>
+        </div>
+        <h2><span>PUMES</span></h2>
+        <div class="nav-links">
+            <a href="{{ url_for('user_dashboard') }}">Home</a>
+            <a href="{{ url_for('kalenderu') }}">Siklus Haid</a>
+            <a href="{{ url_for('artikelu') }}">Artikel</a>
+            <a href="{{ url_for('chatbot') }}">Chatbot</a>
+            <a href="{{ url_for('konsultasiu') }}">Konsultasi</a>
+        </div>
+        <div class="menu-toggle" id="menu-toggle">&#9776;
+            <ul class="menu-toggle-conter">
+                <li><a href="{{ url_for('kalenderu') }}">Siklus<br>Haid</a></li>
+                <li><a href="{{ url_for('artikelu') }}">Artikel</a></li>
+                <li><a href="{{ url_for('chatbot') }}">Chatbot</a></li>
+                <li><a href="{{ url_for('konsultasiu') }}">Konsultasi</a></li>
+            </ul>
+        </div>
+        <div class="menu-home" id="menu-home">
+            <a href="{{ url_for('user_dashboard') }}"><i class="fa fa-home" style="font-size: 30px; color: white;padding: 0 20px"></i></a>
+        </div>
+        <div class="nav-button">
+            <button id="menu-toggle-btn">Hi, {{ session['role'] }}</button>
+            <div id="menuu" class="hiddenn">
+                <ul>
+                    <li><a href="{{ url_for('riwajat_janjiu') }}">Janji<br>Dokter</a></li>
+                    <li><a href="{{ url_for('show_usersu') }}">List<br>Daftar</a></li>
+                    <li><a href="{{ url_for('user_settings') }}">Setting</a></li>
+                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+
+
+
+<div style="padding: 8% 300px;">
+    <div class="form-container">
+        <h2>Kalkulator Siklus Hid</h2>
+
+       <form action="{{ url_for('kalkulatoru') }}" method="POST">
+            <div class="form-group">
+                <label for="start_date">Tanggal Awal Haid:</label>
+                <input type="date" id="start_date" name="start_date" required>
+                <br><br>
+                <label for="end_date">Tanggal Akhir Haid:</label>
+                <input type="date" id="end_date" name="end_date" required>
+                <br><br>
+                <input style="background-color: #a497e8; color: white; font-weight: bold;" type="submit" name="calculate" value="Hitung Durasi">
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="footer" style="background-color: #a497e8;"></div>
+
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>
+
