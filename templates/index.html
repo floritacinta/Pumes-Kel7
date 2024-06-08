@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='image/1.ico') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stylessss.css') }}">
+    <title>PUMES</title>
+    <style type="text/css">
+        .toggle-container {
+           left: 0; 
+           width: 100%;
+           border-radius: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="container">
+        <div class="toggle-container">
+            <div class="toggle" style="background: linear-gradient(135deg, #ffffff, #800080);">
+                <div class="toggle-panel toggle-right">
+                    <h1>WELCOME DI PUMES</h1>
+                    <p>Segera Daftar untuk menikmati akses Terbaik | Sudah punya Akun? </p>
+                    <div style="display: block;">
+                        <a href="{{ url_for('register1') }}" style="border-radius: 10px; padding: 10px 50px; color: white; border: 1px solid white;">Daftar</a>&nbsp;&nbsp;&nbsp;
+                    <a href="{{ url_for('login') }}" style="border-radius: 10px; padding: 10px 50px; color: white; border: 1px solid white;">Login</a>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
