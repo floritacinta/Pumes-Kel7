@@ -1,0 +1,183 @@
+ 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pumes</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='img/1.ico') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style-user.css') }}">
+      <style>
+         .form-container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 100%;
+            padding: 20px;
+            text-align: left;
+        }
+        .form-container h2 {
+         
+            color: black;
+        }
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 0 auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .form-group textarea {
+            resize: none;
+            height: 100px;
+        }
+        .form-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #424242;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+        .form-button:hover {
+            background-color: #93cfd9
+        }
+
+        #mobile {
+                padding: 25px 300px;
+        }
+
+        @media (max-width: 1024px) {
+            #mobile {
+                padding: 75px 10%;
+            }
+            .form-group input,
+        .form-group textarea {
+            width: calc(100% - 20px);
+            padding: 20px;
+            margin: 0 auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 40px;
+        }
+        .form-container h2 {
+    font-size: 30px;
+}
+.form-group label {
+    font-size: 20px;
+}
+.form-button {
+    font-size: 20px;
+}
+        }
+
+         #menuu  {
+            background-color: #93cfd9;
+        }
+        .menu-toggle-conter {
+             background-color: #93cfd9;
+        }
+    </style>
+</head>
+<body style="background-color: white;">
+<nav class="navbar" style="background-color: #93cfd9">
+    <div class="navbar-container">
+        <div class="logo">
+            <a href="#"><img src="{{ url_for('static', filename='img/1.ico') }}" alt="Logo"></a>
+        </div>
+        <h2><span>PUMES</span></h2>
+        <div class="nav-links">
+            <a href="{{ url_for('admin_dashboard') }}">Home</a>
+            <a href="{{ url_for('kalender') }}">Siklus Haid</a>
+            <a href="{{ url_for('artikel') }}">Artikel</a>
+            <a href="https://pumes-chabot-jmsapp8nphxq3sjijphs3aq.streamlit.app/" target="_blank">Chatbot</a>
+            <a href="{{ url_for('konsultasi') }}">Konsultasi</a>
+        </div>
+        <div class="menu-toggle" id="menu-toggle">&#9776;
+            <ul class="menu-toggle-conter">
+                <li><a href="{{ url_for('kalender') }}">Siklus<br>Haid</a></li>
+                <li><a href="{{ url_for('artikel') }}">Artikel</a></li>
+                <li><a href="https://pumes-chabot-jmsapp8nphxq3sjijphs3aq.streamlit.app/" target="_blank">Chatbot</a></li>
+                <li><a href="{{ url_for('konsultasi') }}">Konsultasi</a></li>
+            </ul>
+        </div>
+        <div class="menu-home" id="menu-home">
+            <a href="{{ url_for('admin_dashboard') }}"><i class="fa fa-home" style="font-size: 30px; color: white;padding: 0 20px"></i></a>
+        </div>
+        <div class="nav-button">
+            <button id="menu-toggle-btn">Hi, {{ session['role'] }}</button>
+            <div id="menuu" class="hiddenn">
+                <ul>
+                    <li><a href="{{ url_for('riwajat_janji') }}">Janji<br>Dokter</a></li>
+                    <li><a href="{{ url_for('show_users') }}">List<br>Daftar</a></li>
+                    <li><a href="{{ url_for('admin_settings') }}">Setting</a></li>
+                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+
+
+<div id="mobile">
+    <div class="form-container">
+        <h2>Edit Dokter</h2>
+          {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            {% if category == 'error' %}
+                <p style="color:red;">{{ message }}</p>
+            {% elif category == 'success' %}
+                <p style="color:blue;">{{ message }}</p>
+            {% else %}
+                <p>{{ message }}</p>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+<br>
+       <form method="POST">
+            <div class="form-group">
+            	<label for="spesialisasi">Spesialisasi:</label>
+        <input type="text" id="spesialisasi" name="spesialisasi" value="{{ artikel['spesialisasi'] }}" required><br><br>
+                <label for="latar">latar belakang:</label>
+        <input type="text" id="latar" name="latar" value="{{ artikel['latar'] }}" required><br><br>
+        <label for="keahlian">Keahlian:</label>
+        <textarea id="keahlian" name="keahlian" required>{{ artikel['keahlian'] }}</textarea><br>
+            </div>
+            <div class="form-group">
+         <button type="hidden" class="form-button">Edit</button> 
+            </div>
+          
+        </form>
+    </div>
+
+</div>
+
+
+
+
+<div class="footer" style="background-color: #93cfd9"></div>
+
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>
