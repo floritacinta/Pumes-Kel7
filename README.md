@@ -9,10 +9,8 @@ Proyek ini bertujuan untuk mengembangkan sebuah website yang menyediakan informa
 
 Nama: 1. [Aditya Maulana](https://www.linkedin.com/in/aditya-maulana-5442452a2/)
       2. [Muhammad Bintang Alamsyah](https://www.linkedin.com/in/mubintangal1504/)
-      3. [Wihardi Wanggoro Sabowo ](https://www.linkedin.com/in/nama-anda/)
+      3. [Wihardi Wanggoro Sabowo ](https://www.linkedin.com/in/hardiwang/)
       4. [Florita Cinta Arum K](https://www.linkedin.com/in/florita/)
-      5. [Addina Nabilah Siregar](https://www.linkedin.com/in/nama-anda/)
+      5. [Addina Nabilah Siregar](https://www.linkedin.com/in/addinan-siregar/)
 
 ## Link Tambahan Code Chatbot [Klik](https://bit.ly/4bSoEv5)
-
-## tambahakan apa di bawah
