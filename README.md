@@ -13,4 +13,4 @@ Nama: 1. [Aditya Maulana](https://www.linkedin.com/in/aditya-maulana-5442452a2/)
       4. [Florita Cinta Arum K](https://www.linkedin.com/in/florita/)
       5. [Addina Nabilah Siregar](https://www.linkedin.com/in/addinan-siregar/)
 
-## Link Tambahan Code Chatbot [Klik](https://bit.ly/4bSoEv5)
+## Link Tambahan Code Chatbot [Klik](http://bit.ly/3XfQiOd)
